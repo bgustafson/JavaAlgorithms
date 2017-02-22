@@ -4,26 +4,37 @@ import java.util.Stack;
 
 public class QueueAsStack<T> {
 
-    private final Stack<T> _popStack = new Stack<T>();
-    private final Stack<T> _insertStack = new Stack<T>();
+    private final Stack<T> popStack = new Stack<T>();
+    private final Stack<T> insertStack = new Stack<T>();
 
     public void enqueue(T o) {
 
-        _insertStack.push(o);
+        if(popStack.isEmpty()) {
+            popStack.push(o);
+        } else {
+
+            while (!popStack.isEmpty()) {
+                insertStack.push(popStack.pop());
+            }
+
+            popStack.push(o);
+
+            while (!insertStack.isEmpty()) {
+                popStack.push(insertStack.pop());
+            }
+        }
     }
 
     public T dequeue() {
 
-        if (_popStack.size() == 0) {
-            while (_insertStack.size() > 0) {
-                _popStack.push(_insertStack.pop());
-            }
-        }
-
-        return _popStack.pop();
+        return popStack.pop();
     }
 
     public T peek() {
-        return _popStack.peek();
+        return popStack.peek();
+    }
+
+    public boolean isEmpty() {
+        return popStack.isEmpty();
     }
 }

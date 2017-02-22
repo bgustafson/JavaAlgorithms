@@ -8,17 +8,13 @@ public final class FizzBuzz {
 
             if (i % 3 == 0 && i % 5 == 0) {
                 System.out.print("FizzBuzz");
-            }
-
-            if (i % 3 == 0) {
+            } else if (i % 3 == 0) {
                 System.out.print("Fizz");
+            } else if (i % 5 == 0) {
+                System.out.print("Buzz");
+            } else {
+                System.out.print(i);
             }
-
-            if (i % 5 == 0) {
-                System.out.print("Buz");
-            }
-
-            System.out.print(i);
         }
     }
 }
