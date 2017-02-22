@@ -6,14 +6,14 @@ public final class ClockAngle {
     private static final double degPerMinute = 360 / 60; // 6 degrees in one minute
 
 
-    public static double doWork(int hour, int min) {
+    public static double doWork(double hour, double min) {
 
-        double hourCorrectionFactor = (min / 60) * degPerHour; //Hour hand moves as the minute hand moves
+
+        double hourCorrectionFactor = (min / 60.0) * degPerHour; //Hour hand moves as the minute hand moves
 
         double hourAngle = (hour * degPerHour) + hourCorrectionFactor;
         double minAngle = min * degPerMinute;
 
-        double angle = Math.abs(hourAngle - minAngle);
-        return angle;
+        return Math.abs(hourAngle - minAngle);
     }
 }

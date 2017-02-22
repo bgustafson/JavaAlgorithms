@@ -1,6 +1,7 @@
 package Algorithms;
 
 import Algorithms.WhiteboadQs.ArrayQs;
+import Algorithms.WhiteboadQs.ClockAngle;
 
 public class Main {
 
@@ -19,7 +20,7 @@ public class Main {
             System.out.print(i + ", ");
         }
 
-        //double d = new ClockAngle().doWork(3, 55);
-        // System.out.print(d);
+        double d = ClockAngle.doWork(3, 30);
+        System.out.println("\n" + d);
     }
 }
