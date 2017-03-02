@@ -24,14 +24,14 @@ package Algorithms.Sorting;
 
 public final class HeapSort {//O(n log n)
 
-    public static void sort(int[] data) {
+    public static int[] sort(int[] data) {
 
         int count = data.length;
 
         Heapify(data, count);
 
         int end = count - 1;
-        while (count > 0) {
+        while (end > 0) {
 
             //Swap the largest element (data[0]) with the final element of unsorted part
             int temp = data[end];
@@ -41,6 +41,8 @@ public final class HeapSort {//O(n log n)
             siftDown(data, 0, end - 1);
             end--;
         }
+
+        return data;
     }
 
     private static void Heapify(int[] data, int count) {

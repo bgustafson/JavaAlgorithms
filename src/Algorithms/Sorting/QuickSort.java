@@ -22,16 +22,17 @@ public final class QuickSort {//O(n log n)
 
     private static int[] numbers;
 
-    public static void sort(int[] values) {
+    public static int[] sort(int[] values) {
 
         //If the array is null or only has one item return because the array is already sorted.
-        if (values == null || values.length < 0) {
-            return;
+        if (values == null || values.length < 2) {
+            return values;
         }
 
         //Set the numbers class variable to the argument and call the quickSort method.
         numbers = values;
         quickSort(0, numbers.length - 1);
+        return numbers;
     }
 
     private static void quickSort(int low, int high) {

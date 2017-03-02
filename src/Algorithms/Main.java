@@ -1,5 +1,6 @@
 package Algorithms;
 
+import Algorithms.Sorting.HeapSort;
 import Algorithms.WhiteboadQs.ArrayQs;
 import Algorithms.WhiteboadQs.ClockAngle;
 
@@ -22,5 +23,12 @@ public class Main {
 
         double d = ClockAngle.doWork(3, 30);
         System.out.println("\n" + d);
+
+
+        //List<Integer> ints = InsertionSort.sort2(new LinkedList<Integer>(Arrays.asList(1, 12, 4, 3, 17, 2)));
+
+        //int[] aFromQuickSort = QuickSort.sort(new int[]{ 1, 5, 2, 7, 6, 4, 30, 24});
+
+        int[] aFromHeapSort = HeapSort.sort(new int[]{ 1, 5, 2, 7, 6, 4, 30, 24});
     }
 }

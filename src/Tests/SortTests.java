@@ -1,5 +1,6 @@
 package Tests;
 
+import Algorithms.Sorting.*;
 import Comparators.ReverseNumericalOrder;
 import org.junit.Test;
 
@@ -7,7 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class SortTests {
 
@@ -39,5 +41,55 @@ public class SortTests {
 
         Collections.sort(numbers, new ReverseNumericalOrder());
         assertEquals(expected, numbers);
+    }
+
+    @Test
+    public void BubbleSortTest() {
+
+        final int[] numbers =  { 4, 7, 1, 6, 3, 5, 2 };
+        final int[] expected = { 1, 2, 3, 4, 5, 6, 7 };
+
+        int[] sorted = BubbleSort.sort(numbers);
+        assertArrayEquals(expected, sorted);
+    }
+
+    @Test
+    public void HeapSortTest() {
+
+        final int[] numbers =  { 4, 7, 1, 6, 3, 5, 2 };
+        final int[] expected = { 1, 2, 3, 4, 5, 6, 7 };
+
+        int[] sorted = HeapSort.sort(numbers);
+        assertArrayEquals(expected, sorted);
+    }
+
+    @Test
+    public void InsertionSortTest() {
+
+        final List<Integer> numbers = Arrays.asList(4, 7, 1, 6, 3, 5, 2);
+        final List<Integer> expected = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+
+        final List<Integer>  sorted = InsertionSort.sort(numbers);
+        assertEquals(expected, sorted);
+    }
+
+    @Test
+    public void MergeSortTest() {
+
+        final int[] numbers =  { 4, 7, 1, 6, 3, 5, 2 };
+        final int[] expected = { 1, 2, 3, 4, 5, 6, 7 };
+
+        int[] sorted = MergeSort.sort(numbers);
+        assertArrayEquals(expected, sorted);
+    }
+
+    @Test
+    public void QuickSortTest() {
+
+        final int[] numbers =  { 4, 7, 1, 6, 3, 5, 2 };
+        final int[] expected = { 1, 2, 3, 4, 5, 6, 7 };
+
+        int[] sorted = QuickSort.sort(numbers);
+        assertArrayEquals(expected, sorted);
     }
 }
