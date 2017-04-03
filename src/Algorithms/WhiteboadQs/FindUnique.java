@@ -45,4 +45,20 @@ public final class FindUnique {
 
         return toReturn;
     }
+
+    public static char findFirstUniqueCharacter(String input) {
+
+        boolean containsUnique = false;
+
+        for(char c : input.toCharArray()){
+            if(input.indexOf(c) == input.lastIndexOf(c)){
+                containsUnique = true;
+                return c;
+            } else {
+                containsUnique = false;
+            }
+        }
+
+        return Character.MIN_VALUE;
+    }
 }

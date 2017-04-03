@@ -2,13 +2,13 @@ package Algorithms.WhiteboadQs;
 
 public final class FibonocciHelpers {
 
-    public static int getNthNumberRecursive(int n) {
+    public static int fibRecursive(int n) {
 
         if (n < 2) {
             return 1;
         }
 
-        return getNthNumberRecursive(n - 1) + getNthNumberRecursive(n - 2);
+        return fibRecursive(n - 1) + fibRecursive(n - 2);
     }
 
 
