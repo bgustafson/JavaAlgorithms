@@ -30,5 +30,7 @@ public class Main {
         //int[] aFromQuickSort = QuickSort.sort(new int[]{ 1, 5, 2, 7, 6, 4, 30, 24});
 
         int[] aFromHeapSort = HeapSort.sort(new int[]{ 1, 5, 2, 7, 6, 4, 30, 24});
+
+        long removed = ArrayQs.removeRandom(new int[]  { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
     }
 }
