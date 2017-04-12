@@ -2,7 +2,7 @@ package Algorithms.WhiteboadQs;
 
 public final class FizzBuzz {
 
-    public void doWork(int num) {
+    public static void doWork(int num) {
 
         for (int i = 1; i <= num; i++) {
 
