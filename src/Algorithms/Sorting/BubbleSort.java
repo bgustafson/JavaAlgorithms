@@ -11,7 +11,7 @@ package Algorithms.Sorting;
 
 public final class BubbleSort { //O(n^2)
 
-    public static int[] sort(int[] a) {
+    public static int[] sortAscending(int[] a) {
 
         boolean switched;
         do {
@@ -21,6 +21,29 @@ public final class BubbleSort { //O(n^2)
             for (int i = 0; i < a.length - 1; i++) {
 
                 if (a[i + 1] < a[i]) {
+                    int temp = a[i + 1];
+                    a[i + 1] = a[i];
+                    a[i] = temp;
+                    switched = true;
+                }
+            }
+
+        } while (switched);
+
+        return a;
+    }
+
+
+    public static int[] sortDescending(int[] a) {
+
+        boolean switched;
+        do {
+
+            switched = false;
+
+            for (int i = 0; i < a.length - 1; i++) {
+
+                if (a[i + 1] > a[i]) {
                     int temp = a[i + 1];
                     a[i + 1] = a[i];
                     a[i] = temp;

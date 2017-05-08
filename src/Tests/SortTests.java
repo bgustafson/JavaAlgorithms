@@ -44,12 +44,22 @@ public class SortTests {
     }
 
     @Test
-    public void BubbleSortTest() {
+    public void BubbleSortAscendingTest() {
 
         final int[] numbers =  { 4, 7, 1, 6, 3, 5, 2 };
         final int[] expected = { 1, 2, 3, 4, 5, 6, 7 };
 
-        int[] sorted = BubbleSort.sort(numbers);
+        int[] sorted = BubbleSort.sortAscending(numbers);
+        assertArrayEquals(expected, sorted);
+    }
+
+    @Test
+    public void BubbleSortDescendingTest() {
+
+        final int[] numbers =  { 4, 7, 1, 6, 3, 5, 2 };
+        final int[] expected = { 7, 6, 5, 4, 3, 2, 1 };
+
+        int[] sorted = BubbleSort.sortDescending(numbers);
         assertArrayEquals(expected, sorted);
     }
 

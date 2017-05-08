@@ -1,9 +1,6 @@
 package Tests;
 
-import Algorithms.WhiteboadQs.FibonocciHelpers;
-import Algorithms.WhiteboadQs.FindUnique;
-import Algorithms.WhiteboadQs.StringQs;
-import Algorithms.WhiteboadQs.TowersOfHanoi;
+import Algorithms.WhiteboadQs.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,6 +14,12 @@ public class WhiteboardTests {
 
         for (int i = 0; i< 10; i++) {
             System.out.println(FibonocciHelpers.fibRecursive(i));
+        }
+
+        System.out.println("-----------------------------------");
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Fibonacci.memoizedFibonacci(i));
         }
     }
 

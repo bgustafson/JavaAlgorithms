@@ -24,7 +24,7 @@ public class BinarySearch {//O(log n)
 
         while (low <= high) {
 
-            //Get midpoint or array
+            //Get midpoint of array
             int middle = (low + high) / 2;
 
             if (key > values[middle]) {

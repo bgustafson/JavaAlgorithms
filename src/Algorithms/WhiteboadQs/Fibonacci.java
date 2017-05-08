@@ -1,11 +1,20 @@
 package Algorithms.WhiteboadQs;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Fibonacci {
+
+    private static Map<Integer, Long> cache = new HashMap<>();
+    static {
+        cache.put(0, 0L); //fibonacci(0)
+        cache.put(1, 1L); //fibonacci(1)
+    }
+
+    public static long memoizedFibonacci(int x) {
+        return cache.computeIfAbsent(x, n -> memoizedFibonacci(n-1) + memoizedFibonacci(n-2));
+    }
+
 
     public static List<Integer> fibonacci(int n) {
 
@@ -36,5 +45,4 @@ public class Fibonacci {
         }
         return seq;
     }
-
 }
