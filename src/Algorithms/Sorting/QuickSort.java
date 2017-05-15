@@ -25,7 +25,7 @@ public final class QuickSort {//O(n log n)
     public static int[] sort(int[] values) {
 
         //If the array is null or only has one item return because the array is already sorted.
-        if (values == null || values.length < 2) {
+        if (values == null || values.length == 0) {
             return values;
         }
 

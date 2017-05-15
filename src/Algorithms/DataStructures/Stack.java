@@ -5,15 +5,23 @@ import java.util.List;
 
 public class Stack<T> {
 
-    List<T> m_Items = new ArrayList<T>();
+    private List<T> m_Items = new ArrayList<>();
 
-    public synchronized void Push(T item) {
+    public synchronized void push(T item) {
         m_Items.add(item);
     }
 
-    public synchronized T Pop() {
+    public synchronized T pop() {
         if (!isEmpty()) {
             return m_Items.remove(m_Items.size() - 1);
+        }
+
+        return null;
+    }
+
+    public synchronized T peek() {
+        if (!isEmpty()) {
+            return m_Items.get(m_Items.size() - 1);
         }
 
         return null;

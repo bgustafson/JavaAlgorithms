@@ -1,6 +1,7 @@
 package Algorithms.WhiteboadQs;
 
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -56,8 +57,10 @@ public class StringQs {
 
     public static boolean isPalindrome(final String s) {
         final String toCheck = s.toLowerCase();
+
         int left = 0;
         int right = toCheck.length() - 1;
+
         while (left <= right) {
             while(left < toCheck.length() &&
                     !Character.isLetter(toCheck.charAt(left))) {
@@ -78,7 +81,47 @@ public class StringQs {
         return true;
     }
 
+    public static boolean isPalindrome2(final String word) {
+
+        char[] wordChars = word.toLowerCase().toCharArray();
+
+        int left = 0;
+        int right = word.length() - 1;
+
+        while (right > left) {
+            if(wordChars[left] != wordChars[right]){
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+
     public static boolean strictPalindrome(final String s) {
         return s.equals(reverse(s));
+    }
+
+    public static boolean isAnagram(String one, String two) {
+
+        boolean isAno;
+
+        String string1 = one.replaceAll("\\s", "").toLowerCase();
+        String string2 = two.replaceAll("\\s", "").toLowerCase();
+
+        if(string1.length() != string2.length()) {
+            isAno = false;
+        } else {
+            char[] array1 = string1.toCharArray();
+            char[] array2 = string2.toCharArray();
+
+            Arrays.sort(array1);
+            Arrays.sort(array2);
+
+            isAno = Arrays.equals(array1, array2);
+        }
+
+        return isAno;
     }
 }

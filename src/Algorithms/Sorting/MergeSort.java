@@ -22,7 +22,7 @@ To avoid the creation of too many collections, typically one new collection is c
 public final class MergeSort {//O(n log n)
 
     private static int[] numbers;
-    private static int[] helper;
+    private static int[] temp;
 
     public static int[] sort(int[] values) {
 
@@ -31,7 +31,8 @@ public final class MergeSort {//O(n log n)
         }
 
         numbers = values;
-        helper = new int[values.length];
+        temp = new int[values.length];
+
         mergeSort(0, values.length - 1);
         return numbers;
     }
@@ -54,9 +55,9 @@ public final class MergeSort {//O(n log n)
     }
 
     private static void merge(int low, int middle, int high) {
-        //copy into the helper array both halves
+        //copy into the temp array both halves
         for (int i = low; i <= high; i++) {
-            helper[i] = numbers[i];
+            temp[i] = numbers[i];
         }
 
         int i = low;
@@ -65,11 +66,11 @@ public final class MergeSort {//O(n log n)
 
         //copy smallest values from either left or right array back to original array
         while (i <= middle && j <= high) {
-            if (helper[i] <= helper[j]) {
-                numbers[k] = helper[i];
+            if (temp[i] <= temp[j]) {
+                numbers[k] = temp[i];
                 i++;
             } else {
-                numbers[k] = helper[j];
+                numbers[k] = temp[j];
                 j++;
             }
             k++;
@@ -77,7 +78,7 @@ public final class MergeSort {//O(n log n)
 
         //copy the rest of the left side of the array into the target array
         while (i <= middle) {
-            numbers[k] = helper[i];
+            numbers[k] = temp[i];
             k++;
             i++;
         }
